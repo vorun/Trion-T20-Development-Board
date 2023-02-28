@@ -16,7 +16,7 @@ Development board for Efinix Trion T20 FPGA.
 
 - Rasberry Pi header fo I/O connectivity.
 
-- Standard SYZYGY port for LVDS I/O with configurable voltage levels.(Or 2 PMODS or Rasberry Pi MIPI connector NOT DECIDED YET)
+- Standard SYZYGY port for LVDS I/O with configurable voltage levels. (Or 2 PMODS or Rasberry Pi MIPI connector NOT DECIDED YET)
 
 - PCB is designed to be manufactored by JLCPCB using the 6 layer impedence controlled JLC3313 stack up. All of the impedence controlled track widths calculated acording to the JLC3313 stack up. Stack is as follows;
 
