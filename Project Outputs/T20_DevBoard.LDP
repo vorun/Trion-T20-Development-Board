@@ -1,0 +1,3 @@
+Layer Pairs Export File for PCB: C:\Users\Orhun\Desktop\T20Dev\T8_devkit_PCB\T20_DevBoard.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=t20_devboard-roundholes.txt|DrillLayers=gtl,g1,g2,g3,g4,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=t20_devboard-slotholes.txt|DrillLayers=gtl,g1,g2,g3,g4,gbl

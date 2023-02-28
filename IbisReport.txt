@@ -1,0 +1,133 @@
+Matching IBIS pin : 25 with model : lvds_io_3p3_tp_out.mac.
+WARNING: IBIS pin : 25 has an IO model and is being assigned to a Input pin.
+
+Matching IBIS pin : 25 with model : lvds_io_3p3_tp_in.mac.
+
+Matching IBIS pin : 28 with model : lvds_rx_tp_in.mac.
+
+Matching IBIS pin : 29 with model : lvds_rx_tp_in.mac.
+
+Matching IBIS pin : 26 with model : lvds_tx_tp_out.mac.
+WARNING: IBIS pin : 26 has an output model and is being assigned to a Input pin.
+
+Matching IBIS pin : 27 with model : lvds_tx_tp_out.mac.
+WARNING: IBIS pin : 27 has an output model and is being assigned to a Input pin.
+
+Matching IBIS pin : 24 with model : io_3p3_d4s1_tp_out.mac.
+WARNING: IBIS pin : 24 has an IO model and is being assigned to a Power pin.
+
+Matching IBIS pin : 24 with model : io_3p3_d4s1_tp_in.mac.
+WARNING: IBIS pin : 24 has an input model and is being assigned to a Power pin.
+
+Matching IBIS pin : 23 with model : io_3p3_d4s0_tp_out.mac.
+WARNING: IBIS pin : 23 has an IO model and is being assigned to a Power pin.
+
+Matching IBIS pin : 23 with model : io_3p3_d4s0_tp_in.mac.
+WARNING: IBIS pin : 23 has an input model and is being assigned to a Power pin.
+
+Matching IBIS pin : 22 with model : io_3p3_d3s1_tp_out.mac.
+WARNING: IBIS pin : 22 has an IO model and is being assigned to a Power pin.
+
+Matching IBIS pin : 22 with model : io_3p3_d3s1_tp_in.mac.
+WARNING: IBIS pin : 22 has an input model and is being assigned to a Power pin.
+
+Matching IBIS pin : 21 with model : io_3p3_d3s0_tp_out.mac.
+WARNING: IBIS pin : 21 has an IO model and is being assigned to a Power pin.
+
+Matching IBIS pin : 21 with model : io_3p3_d3s0_tp_in.mac.
+WARNING: IBIS pin : 21 has an input model and is being assigned to a Power pin.
+
+Matching IBIS pin : 20 with model : io_3p3_d2s1_tp_out.mac.
+
+Matching IBIS pin : 20 with model : io_3p3_d2s1_tp_in.mac.
+
+Matching IBIS pin : 19 with model : io_3p3_d2s0_tp_out.mac.
+
+Matching IBIS pin : 19 with model : io_3p3_d2s0_tp_in.mac.
+
+Matching IBIS pin : 18 with model : io_3p3_d1s1_tp_out.mac.
+
+Matching IBIS pin : 18 with model : io_3p3_d1s1_tp_in.mac.
+
+Matching IBIS pin : 17 with model : io_3p3_d1s0_tp_out.mac.
+
+Matching IBIS pin : 17 with model : io_3p3_d1s0_tp_in.mac.
+
+Matching IBIS pin : 16 with model : io_2p5_d4s1_tp_out.mac.
+
+Matching IBIS pin : 16 with model : io_2p5_d4s1_tp_in.mac.
+
+Matching IBIS pin : 15 with model : io_2p5_d4s0_tp_out.mac.
+
+Matching IBIS pin : 15 with model : io_2p5_d4s0_tp_in.mac.
+
+Matching IBIS pin : 14 with model : io_2p5_d3s1_tp_out.mac.
+
+Matching IBIS pin : 14 with model : io_2p5_d3s1_tp_in.mac.
+
+Matching IBIS pin : 13 with model : io_2p5_d3s0_tp_out.mac.
+WARNING: IBIS pin : 13 has an IO model and is being assigned to a Power pin.
+
+Matching IBIS pin : 13 with model : io_2p5_d3s0_tp_in.mac.
+WARNING: IBIS pin : 13 has an input model and is being assigned to a Power pin.
+
+Matching IBIS pin : 12 with model : io_2p5_d2s1_tp_out.mac.
+WARNING: IBIS pin : 12 has an IO model and is being assigned to a Power pin.
+
+Matching IBIS pin : 12 with model : io_2p5_d2s1_tp_in.mac.
+WARNING: IBIS pin : 12 has an input model and is being assigned to a Power pin.
+
+Matching IBIS pin : 11 with model : io_2p5_d2s0_tp_out.mac.
+
+Matching IBIS pin : 11 with model : io_2p5_d2s0_tp_in.mac.
+
+Matching IBIS pin : 10 with model : io_2p5_d1s1_tp_out.mac.
+
+Matching IBIS pin : 10 with model : io_2p5_d1s1_tp_in.mac.
+
+Matching IBIS pin : 9 with model : io_2p5_d1s0_tp_out.mac.
+WARNING: IBIS pin : 9 has an IO model and is being assigned to a Power pin.
+
+Matching IBIS pin : 9 with model : io_2p5_d1s0_tp_in.mac.
+WARNING: IBIS pin : 9 has an input model and is being assigned to a Power pin.
+
+Matching IBIS pin : 8 with model : io_1p8_d4s1_tp_out.mac.
+
+Matching IBIS pin : 8 with model : io_1p8_d4s1_tp_in.mac.
+
+Matching IBIS pin : 7 with model : io_1p8_d4s0_tp_out.mac.
+
+Matching IBIS pin : 7 with model : io_1p8_d4s0_tp_in.mac.
+
+Matching IBIS pin : 6 with model : io_1p8_d3s1_tp_out.mac.
+
+Matching IBIS pin : 6 with model : io_1p8_d3s1_tp_in.mac.
+
+Matching IBIS pin : 5 with model : io_1p8_d3s0_tp_out.mac.
+WARNING: IBIS pin : 5 has an IO model and is being assigned to a Power pin.
+
+Matching IBIS pin : 5 with model : io_1p8_d3s0_tp_in.mac.
+WARNING: IBIS pin : 5 has an input model and is being assigned to a Power pin.
+
+Matching IBIS pin : 4 with model : io_1p8_d2s1_tp_out.mac.
+
+Matching IBIS pin : 4 with model : io_1p8_d2s1_tp_in.mac.
+
+Matching IBIS pin : 3 with model : io_1p8_d2s0_tp_out.mac.
+
+Matching IBIS pin : 3 with model : io_1p8_d2s0_tp_in.mac.
+
+Matching IBIS pin : 2 with model : io_1p8_d1s1_tp_out.mac.
+WARNING: IBIS pin : 2 has an IO model and is being assigned to a Passive pin.
+
+Matching IBIS pin : 2 with model : io_1p8_d1s1_tp_in.mac.
+WARNING: IBIS pin : 2 has an input model and is being assigned to a Passive pin.
+
+Matching IBIS pin : 1 with model : io_1p8_d1s0_tp_out.mac.
+WARNING: IBIS pin : 1 has an IO model and is being assigned to a Power pin.
+
+Matching IBIS pin : 1 with model : io_1p8_d1s0_tp_in.mac.
+WARNING: IBIS pin : 1 has an input model and is being assigned to a Power pin.
+
+
+Any unmatched IBIS pins should have their model/technology set manually.

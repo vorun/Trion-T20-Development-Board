@@ -1,0 +1,13 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [T20_DevBoard.PrjPcb]
+   Generated File[T20_DevBoard-RoundHoles.TXT]
+   Generated File[T20_DevBoard-SlotHoles.TXT]
+   Generated File[T20_DevBoard.LDP]
+   Generated File[T20_DevBoard.DRR]
+
+
+Files Generated   : 4
+Documents Printed : 0
+
+Finished Output Generation At 02:42:10 AM On 2/3/2023

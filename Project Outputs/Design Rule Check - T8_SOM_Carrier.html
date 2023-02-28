@@ -1,0 +1,597 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD22\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">12/25/2022</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">08:26:57 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:05</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc" class="file"><acronym title="C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc">C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">63</td></tr>
+</table>
+</td>
+</table><a name="ID2D15VEN3QHM2KGJQB03XLGAFSJCR1Y3RLOM022LEGCF0YWZCULI"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID0ACWLNLKWLPFD35O2S4DCPKDOY0EIF2Z0W34GNEFPIJH0Q1D0CB">Clearance Constraint (Gap=3.5mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDSJTIZQ5T3CEHE0ESFKRIOFFNNNHXY0SLD3WGWVBS5QQNYHLRA3AF">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDF0B0GAXCH4DCCTNTL4PT315URHM23WERP5K05DMAH4KR42F5LYYK">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">6</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDANSXNSX1GIC3NVN5DKNQJ0XYGENORIAPUIQVF3CWYEM1J4GXLATJ">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID0AHCP4O53ZPVOKKXCFLDE33KCER0O4GVSKOYS1P2CFLVOP3T3T3C">Width Constraint (Min=3.5mil) (Max=71497.938mil) (Preferred=3.5mil) (InNetClass('SING_END50'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDBFETVJKI1EWQJUOMFIEALXQLYIOWCV0RCED1ROD5HA2MKG4HGXL">Width Constraint (Min=10mil) (Max=10mil) (Preferred=10mil) (Disabled)(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID1IV5RGCTDYFTE13F0YUT42N3LGR1DMLB2NUFGJNIEWMORSY5EAEC">Routing Layers(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJRHFRTF1OV5TEA4FVLX5RSRL3N3BMN53MQEPSHDHLRDABUDGILSI">Routing Via (MinHoleWidth=7.874mil) (MaxHoleWidth=248.031mil) (PreferredHoleWidth=7.874mil) (MinWidth=17.716mil) (MaxWidth=257.874mil) (PreferedWidth=17.716mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDZ5S5SJMCP5Q3G5QW25X1LODWHL2HOZ15MAX4AZP1TTOCET2CXF1P">Differential Pairs Uncoupled Length using the Gap Constraints (Min=3.5mil) (Max=5mil) (Prefered=5mil)  and Width Constraints (Min=3.569mil) (Max=15mil) (Prefered=15mil) (InDifferentialPairClass('DIFF90'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDQ5T5LNYEFK13KRBS1QBUZ3LDRFZSBFZQ3BFY0BIOLZOT1L1SZDCK">Differential Pairs Uncoupled Length using the Gap Constraints (Min=5mil) (Max=10mil) (Prefered=10mil)  and Width Constraints (Min=2.49mil) (Max=15mil) (Prefered=15mil) (InDifferentialPairClass('DIFF100'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDVQCWSEPHM3UTHG5SD4FEWLAKCP4G40E4IXQUSJMFSU1WGXLKV5WB">Power Plane Connect Rule(Direct Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (InPadClass('PowerPads'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDARRTEWDGYF4CNJH3EBORRMK0AMGLNBCDGIHMVAF5VZ4IGI04EYHL">Power Plane Connect Rule(Direct Connect )(Expansion=11.811mil) (Conductor Width=3.5mil) (Air Gap=3.5mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDTD0GXMUWDXYTC052ZNGUO2N0QFMJRZKHRZJM3GHVK5SENXETRFHM">Minimum Annular Ring (Minimum=3mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID3AVMKRBFQN44OVNDCHEYGSJD0AROIB2TSVMUKE5XU1EMBNJFDK">Hole Size Constraint (Min=7.874mil) (Max=248.031mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDB4LKQ1V5ITG5BSS4XZVKJDTFPOFKH22SVX1OZSOPCLNGLYBATSAG">Pads and Vias to follow the Drill pairs settings</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDICWWAA3YIMPPLLON1QEXPKZAMJXR3SNH2DWHOQDK1GJRVLAR1WR">Hole To Hole Clearance (Gap=9.842mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDLX5T2ANSYCJMPS1W25EUKFTI5FQUKZJFKSL41EPPTTYPVLDKIRQ">Minimum Solder Mask Sliver (Gap=0mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJLXP52AVQRKGLGKSXO5QRDSNQMMVWROO5DM4YMFN0XNHJQMDIWGC">Silk To Solder Mask (Clearance=3.5mil) (IsPad),(All)</a></td>
+<td class="column2">23</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDYF4I4ULJ3HRB3XB5TMMMGXIUDRQPRLYUSUX5ZNYL12SFXHNPT2G">Silk to Silk (Clearance=0mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDW5IUDQU1J1BQFNQYJRG2R4T5GCONJIXU0I4POEMQAJXDQSQKPHBM">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPVH2JG3EUDISPHPVFML5POEFTL5NASO25GEGVGMYVEEYLACJJU5E">Board Clearance Constraint (Gap=0mil) (All)</a></td>
+<td class="column2">33</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDHJWENITQSW0IIO3LPMRNACUJZELQBXEINW5VYOHMWL2RXGNLOJAE">Matched Lengths(Tolerance=19.685mil) (InNetClass('RMII2'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDOARK0OOCKHZLPAVV4BXDMRC00JNQJ0MQFRXDPDB3S5BYI1BYMCVN">Matched Lengths(Tolerance=19.685mil) (InNetClass('ULPI'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID2YI4V12GZYCQP0HICXJZ42CSYBNNE4I4YHT4YYOUZ3P4B3MADMHK">Matched Lengths(Tolerance=19.685mil) (InNetClass('RMII3'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID0BDYVTJHS3BYNLNVNKFLWDKIUEMTNAEABXSWAMIHBBSP1KS4VQNE">Matched Lengths(Tolerance=19.685mil) (InNetClass('ETH_MD'))</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDFN24TG4XWXIUKZLHOUJ12FUEJBKT1VXTJZJKH0LHQRPO3TH2LSN">Matched Lengths(Tolerance=19.685mil) (InNetClass('*OTG'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDATSAQCYWZCW5H40GIZDUROWBNJEMISECUWJPELZTXQKBZ5PZTVO">Matched Lengths(Tolerance=9.842mil) (InDifferentialPairClass('DIFF100'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDM3F1QWCFK35OCQIBDD3VIY2PT2RCGCU0ZT1LUCJA4N1TRWLR0AB">Matched Lengths(Tolerance=19.685mil) (InNetClass('RMII'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDSM13SR1SOPYLPNNY1PJ2OC4QGGIFIYNXBQGSQWN3WP1YC33X3P0C">Component Clearance Constraint ( Horizontal Gap = 3.5mil, Vertical Gap = 3.5mil ) (All),(All) </a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID2G5GEV0JXY5MCJSK133DK2V5TPZQKBV1XE0RKACXC3BVM12QLYED">Height Constraint (Min=0mil) (Max=71497.938mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">63</td>
+</tr>
+</table><br><a name="IDF0B0GAXCH4DCCTNTL4PT315URHM23WERP5K05DMAH4KR42F5LYYK"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8506.105mil|Location2.X=8555.492mil|Location1.Y=4870.801mil|Location2.Y=4903.791mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8506.105mil|Location2.X=8555.492mil|Location1.Y=4870.801mil|Location2.Y=4903.791mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U5-31(1410.61mil,1017.03mil) on Signal_Top And Pad C33-1(1425.549mil,1027.579mil) on Signal_Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8185.507mil|Location2.X=8224.124mil|Location1.Y=6259.737mil|Location2.Y=6335.539mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8185.507mil|Location2.X=8224.124mil|Location1.Y=6259.737mil|Location2.Y=6335.539mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (1082.139mil,2463.068mil) from Signal_Top to Signal_Bottom And Pad C68-1(1094.18mil,2414.628mil) on Signal_Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9401.302mil|Location2.X=9496.107mil|Location1.Y=6294.829mil|Location2.Y=6326.325mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9401.302mil|Location2.X=9496.107mil|Location1.Y=6294.829mil|Location2.Y=6326.325mil|Absolute=True">Un-Routed Net Constraint: Net NetIC3_3 Between Via (2300.886mil,2450.147mil) from Signal_Top to Signal_Bottom And Pad IC3-3(2347.954mil,2449.916mil) on Signal_Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10024.238mil|Location2.X=10253.566mil|Location1.Y=5054.752mil|Location2.Y=5263.81mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10024.238mil|Location2.X=10253.566mil|Location1.Y=5054.752mil|Location2.Y=5263.81mil|Absolute=True">Un-Routed Net Constraint: Net S\D\_\C\S\ Between Track (3009.058mil,1294.091mil)(3068.113mil,1294.091mil) on Signal_Top And Pad NT4-2(3038.386mil,1303.15mil) on Signal_Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7071.462mil|Location2.X=12000.596mil|Location1.Y=3816.515mil|Location2.Y=6875.57mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7071.462mil|Location2.X=12000.596mil|Location1.Y=3816.515mil|Location2.Y=6875.57mil|Absolute=True">Un-Routed Net Constraint: Polygon  (NONET_L02_P058) on GND_1 Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7843.531mil|Location2.X=12772.665mil|Location1.Y=3549.634mil|Location2.Y=6608.689mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7843.531mil|Location2.X=12772.665mil|Location1.Y=3549.634mil|Location2.Y=6608.689mil|Absolute=True">Un-Routed Net Constraint: Polygon  (NONET_L02_P059) on GND_1 Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDJLXP52AVQRKGLGKSXO5QRDSNQMMVWROO5DM4YMFN0XNHJQMDIWGC"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=3.5mil) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10045.486mil|Location2.X=10048.819mil|Location1.Y=4068.284mil|Location2.Y=4071.617mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10045.486mil|Location2.X=10048.819mil|Location1.Y=4068.284mil|Location2.Y=4071.617mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 3.5mil) Between Arc (2861.973mil,209.29mil) on Top Overlay And Pad PTH5-1(2867.524mil,209.29mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10045.486mil|Location2.X=10048.819mil|Location1.Y=4704.462mil|Location2.Y=4707.796mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10045.486mil|Location2.X=10048.819mil|Location1.Y=4704.462mil|Location2.Y=4707.796mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 3.5mil) Between Arc (2861.973mil,845.468mil) on Top Overlay And Pad PTH15-1(2867.524mil,847.909mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10046.781mil|Location2.X=10050.115mil|Location1.Y=6037.219mil|Location2.Y=6040.552mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10046.781mil|Location2.X=10050.115mil|Location1.Y=6037.219mil|Location2.Y=6040.552mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 3.5mil) Between Arc (2863.626mil,2178.225mil) on Top Overlay And Pad PTH2-1(2867.524mil,2175.726mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10046.781mil|Location2.X=10050.115mil|Location1.Y=6703.833mil|Location2.Y=6707.166mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10046.781mil|Location2.X=10050.115mil|Location1.Y=6703.833mil|Location2.Y=6707.166mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 3.5mil) Between Arc (2863.626mil,2844.839mil) on Top Overlay And Pad PTH1-1(2867.524mil,2842.398mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10048.596mil|Location2.X=10051.929mil|Location1.Y=6027.81mil|Location2.Y=6031.143mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10048.596mil|Location2.X=10051.929mil|Location1.Y=6027.81mil|Location2.Y=6031.143mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 3.5mil) Between Arc (2865.083mil,2168.816mil) on Top Overlay And Pad PTH2-1(2867.524mil,2175.726mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10048.238mil|Location2.X=10051.571mil|Location1.Y=4697.81mil|Location2.Y=4701.143mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10048.238mil|Location2.X=10051.571mil|Location1.Y=4697.81mil|Location2.Y=4701.143mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 3.5mil) Between Arc (2865.083mil,838.816mil) on Top Overlay And Pad PTH15-1(2867.524mil,847.909mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11375.128mil|Location2.X=11378.461mil|Location1.Y=4068.284mil|Location2.Y=4071.617mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11375.128mil|Location2.X=11378.461mil|Location1.Y=4068.284mil|Location2.Y=4071.617mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 3.5mil) Between Arc (4191.973mil,209.29mil) on Top Overlay And Pad PTH6-1(4192.917mil,209.29mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11375.128mil|Location2.X=11378.461mil|Location1.Y=4704.462mil|Location2.Y=4707.796mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11375.128mil|Location2.X=11378.461mil|Location1.Y=4704.462mil|Location2.Y=4707.796mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 3.5mil) Between Arc (4191.973mil,845.468mil) on Top Overlay And Pad PTH16-1(4192.917mil,847.909mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11377.139mil|Location2.X=11380.473mil|Location1.Y=6037.219mil|Location2.Y=6040.552mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11377.139mil|Location2.X=11380.473mil|Location1.Y=6037.219mil|Location2.Y=6040.552mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 3.5mil) Between Arc (4193.626mil,2178.225mil) on Top Overlay And Pad PTH8-1(4195.417mil,2173.784mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11377.139mil|Location2.X=11380.473mil|Location1.Y=6703.833mil|Location2.Y=6707.166mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11377.139mil|Location2.X=11380.473mil|Location1.Y=6703.833mil|Location2.Y=6707.166mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 3.5mil) Between Arc (4193.626mil,2844.839mil) on Top Overlay And Pad PTH3-1(4192.917mil,2842.398mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11381.069mil|Location2.X=11384.402mil|Location1.Y=6030.805mil|Location2.Y=6034.138mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11381.069mil|Location2.X=11384.402mil|Location1.Y=6030.805mil|Location2.Y=6034.138mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 3.5mil) Between Arc (4197.913mil,2171.811mil) on Top Overlay And Pad PTH8-1(4195.417mil,2173.784mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11381.427mil|Location2.X=11384.76mil|Location1.Y=4700.805mil|Location2.Y=4704.138mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11381.427mil|Location2.X=11384.76mil|Location1.Y=4700.805mil|Location2.Y=4704.138mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 3.5mil) Between Arc (4197.913mil,841.811mil) on Top Overlay And Pad PTH16-1(4192.917mil,847.909mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8550.165mil|Location2.X=8554.915mil|Location1.Y=4871.987mil|Location2.Y=4876.737mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8550.165mil|Location2.X=8554.915mil|Location1.Y=4871.987mil|Location2.Y=4876.737mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.559mil &lt; 3.5mil) Between Pad C33-1(1425.549mil,1027.579mil) on Signal_Bottom And Track (1434.21mil,1009.469mil)(1442.084mil,1009.469mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [2.559mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8547.015mil|Location2.X=8551.765mil|Location1.Y=4871.987mil|Location2.Y=4876.737mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8547.015mil|Location2.X=8551.765mil|Location1.Y=4871.987mil|Location2.Y=4876.737mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.559mil &lt; 3.5mil) Between Pad C33-1(1425.549mil,1027.579mil) on Signal_Bottom And Track (1434.21mil,930.729mil)(1434.21mil,1009.469mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [2.559mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11581.313mil|Location2.X=11586.063mil|Location1.Y=6314.483mil|Location2.Y=6319.233mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11581.313mil|Location2.X=11586.063mil|Location1.Y=6314.483mil|Location2.Y=6319.233mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.953mil &lt; 3.5mil) Between Pad C78-1(4496.067mil,2429.131mil) on Signal_Top And Track (4460.634mil,2460.627mil)(4531.5mil,2460.627mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.953mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11636.431mil|Location2.X=11641.181mil|Location1.Y=6323.341mil|Location2.Y=6328.091mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11636.431mil|Location2.X=11641.181mil|Location1.Y=6323.341mil|Location2.Y=6328.091mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.953mil &lt; 3.5mil) Between Pad C78-2(4496.067mil,2492.123mil) on Signal_Top And Track (4460.634mil,2460.627mil)(4531.5mil,2460.627mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.953mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11915.955mil|Location2.X=11920.705mil|Location1.Y=6342.045mil|Location2.Y=6346.795mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11915.955mil|Location2.X=11920.705mil|Location1.Y=6342.045mil|Location2.Y=6346.795mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.953mil &lt; 3.5mil) Between Pad C80-1(4830.709mil,2456.693mil) on Signal_Top And Track (4795.276mil,2488.189mil)(4866.142mil,2488.189mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.953mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11971.073mil|Location2.X=11975.823mil|Location1.Y=6350.904mil|Location2.Y=6355.654mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11971.073mil|Location2.X=11975.823mil|Location1.Y=6350.904mil|Location2.Y=6355.654mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.953mil &lt; 3.5mil) Between Pad C80-2(4830.709mil,2519.685mil) on Signal_Top And Track (4795.276mil,2488.189mil)(4866.142mil,2488.189mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.953mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11577.376mil|Location2.X=11582.126mil|Location1.Y=4491.648mil|Location2.Y=4496.398mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11577.376mil|Location2.X=11582.126mil|Location1.Y=4491.648mil|Location2.Y=4496.398mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.953mil &lt; 3.5mil) Between Pad C81-1(4492.13mil,606.296mil) on Signal_Top And Track (4456.697mil,637.792mil)(4527.563mil,637.792mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.953mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11632.494mil|Location2.X=11637.244mil|Location1.Y=4500.507mil|Location2.Y=4505.257mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11632.494mil|Location2.X=11637.244mil|Location1.Y=4500.507mil|Location2.Y=4505.257mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.953mil &lt; 3.5mil) Between Pad C81-2(4492.13mil,669.288mil) on Signal_Top And Track (4456.697mil,637.792mil)(4527.563mil,637.792mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.953mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11908.081mil|Location2.X=11912.831mil|Location1.Y=4519.211mil|Location2.Y=4523.961mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11908.081mil|Location2.X=11912.831mil|Location1.Y=4519.211mil|Location2.Y=4523.961mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.953mil &lt; 3.5mil) Between Pad C83-1(4822.835mil,633.858mil) on Signal_Top And Track (4787.402mil,665.354mil)(4858.268mil,665.354mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.953mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11963.199mil|Location2.X=11967.949mil|Location1.Y=4528.069mil|Location2.Y=4532.819mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11963.199mil|Location2.X=11967.949mil|Location1.Y=4528.069mil|Location2.Y=4532.819mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.953mil &lt; 3.5mil) Between Pad C83-2(4822.835mil,696.85mil) on Signal_Top And Track (4787.402mil,665.354mil)(4858.268mil,665.354mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.953mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8402.738mil|Location2.X=8407.488mil|Location1.Y=6053.255mil|Location2.Y=6058.005mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8402.738mil|Location2.X=8407.488mil|Location1.Y=6053.255mil|Location2.Y=6058.005mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.984mil &lt; 3.5mil) Between Pad U2-6(1268.28mil,2181.682mil) on Signal_Bottom And Track (1255.485mil,2199.398mil)(1296.823mil,2199.398mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.984mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDPVH2JG3EUDISPHPVFML5POEFTL5NASO25GEGVGMYVEEYLACJJU5E"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Board Clearance Constraint (Gap=0mil) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6501.799mil|Location2.X=6508.048mil|Location1.Y=5375.255mil|Location2.Y=5381.504mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6501.799mil|Location2.X=6508.048mil|Location1.Y=5375.255mil|Location2.Y=5381.504mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Text "3046.251 (mil)" (-580.724mil,1142.804mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9567.3mil|Location2.X=9573.549mil|Location1.Y=3241.425mil|Location2.Y=3247.674mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9567.3mil|Location2.X=9573.549mil|Location1.Y=3241.425mil|Location2.Y=3247.674mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Text "4922.482 (mil)" (2075.366mil,-646.082mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8144.742mil|Location2.X=8150.991mil|Location1.Y=3247.497mil|Location2.Y=3253.747mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8144.742mil|Location2.X=8150.991mil|Location1.Y=3247.497mil|Location2.Y=3253.747mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (0.004mil,-609.986mil)(2065.368mil,-610.091mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7142.059mil|Location2.X=7148.308mil|Location1.Y=3237.548mil|Location2.Y=3243.798mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7142.059mil|Location2.X=7148.308mil|Location1.Y=3237.548mil|Location2.Y=3243.798mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (0.004mil,-609.986mil)(60.003mil,-629.989mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7142.06mil|Location2.X=7148.309mil|Location1.Y=3257.548mil|Location2.Y=3263.798mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7142.06mil|Location2.X=7148.309mil|Location1.Y=3257.548mil|Location2.Y=3263.798mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (0.004mil,-609.986mil)(60.005mil,-589.989mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7112.06mil|Location2.X=7118.309mil|Location1.Y=3247.55mil|Location2.Y=3253.799mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7112.06mil|Location2.X=7118.309mil|Location1.Y=3247.55mil|Location2.Y=3253.799mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (0.004mil,-619.986mil)(0.005mil,-599.986mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9076.842mil|Location2.X=9083.091mil|Location1.Y=3857.768mil|Location2.Y=3864.017mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9076.842mil|Location2.X=9083.091mil|Location1.Y=3857.768mil|Location2.Y=3864.017mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (1964.793mil,5.368mil)(1965.187mil,107.337mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9677.242mil|Location2.X=9683.491mil|Location1.Y=3857.75mil|Location2.Y=3863.999mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9677.242mil|Location2.X=9683.491mil|Location1.Y=3857.75mil|Location2.Y=3863.999mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (2565.184mil,109.305mil)(2565.187mil,5.368mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9752.591mil|Location2.X=9761.715mil|Location1.Y=6901.95mil|Location2.Y=6911.074mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9752.591mil|Location2.X=9761.715mil|Location1.Y=6901.95mil|Location2.Y=6911.074mil|Absolute=True">Board Outline Clearance(Outline Edge): (2.025mil &lt; 7.874mil) Between Board Edge And Track (2641.973mil,2567.398mil)(2641.973mil,3039.839mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9752.591mil|Location2.X=9761.715mil|Location1.Y=6901.95mil|Location2.Y=6911.074mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9752.591mil|Location2.X=9761.715mil|Location1.Y=6901.95mil|Location2.Y=6911.074mil|Absolute=True">Board Outline Clearance(Outline Edge): (2.025mil &lt; 7.874mil) Between Board Edge And Track (2641.973mil,3039.839mil)(4413.626mil,3039.839mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11001.86mil|Location2.X=11008.109mil|Location1.Y=3247.352mil|Location2.Y=3253.601mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11001.86mil|Location2.X=11008.109mil|Location1.Y=3247.352mil|Location2.Y=3253.601mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (2857.122mil,-610.131mil)(4922.486mil,-610.236mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7080.406mil|Location2.X=7086.655mil|Location1.Y=5281.858mil|Location2.Y=5288.108mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7080.406mil|Location2.X=7086.655mil|Location1.Y=5281.858mil|Location2.Y=5288.108mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (-43.46mil,1424.323mil)(-19.838mil,1424.323mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7068.595mil|Location2.X=7074.845mil|Location1.Y=5293.669mil|Location2.Y=5299.919mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7068.595mil|Location2.X=7074.845mil|Location1.Y=5293.669mil|Location2.Y=5299.919mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (-43.46mil,1424.323mil)(-43.46mil,1447.945mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7068.595mil|Location2.X=7074.845mil|Location1.Y=5566.11mil|Location2.Y=5572.36mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7068.595mil|Location2.X=7074.845mil|Location1.Y=5566.11mil|Location2.Y=5572.36mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (-43.46mil,1696.764mil)(-43.46mil,1720.386mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7080.406mil|Location2.X=7086.655mil|Location1.Y=5577.921mil|Location2.Y=5584.171mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7080.406mil|Location2.X=7086.655mil|Location1.Y=5577.921mil|Location2.Y=5584.171mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (-43.46mil,1720.386mil)(-19.838mil,1720.386mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11524.244mil|Location2.X=11533.368mil|Location1.Y=6901.954mil|Location2.Y=6911.078mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11524.244mil|Location2.X=11533.368mil|Location1.Y=6901.954mil|Location2.Y=6911.078mil|Absolute=True">Board Outline Clearance(Outline Edge): (2.034mil &lt; 7.874mil) Between Board Edge And Track (4413.626mil,2567.398mil)(4413.626mil,3039.839mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12004.541mil|Location2.X=12010.79mil|Location1.Y=3237.301mil|Location2.Y=3243.55mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12004.541mil|Location2.X=12010.79mil|Location1.Y=3237.301mil|Location2.Y=3243.55mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (4862.485mil,-630.233mil)(4922.486mil,-610.236mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12004.542mil|Location2.X=12010.791mil|Location1.Y=3257.301mil|Location2.Y=3263.55mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12004.542mil|Location2.X=12010.791mil|Location1.Y=3257.301mil|Location2.Y=3263.55mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (4862.487mil,-590.233mil)(4922.486mil,-610.236mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12034.542mil|Location2.X=12040.791mil|Location1.Y=3247.3mil|Location2.Y=3253.549mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12034.542mil|Location2.X=12040.791mil|Location1.Y=3247.3mil|Location2.Y=3253.549mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (4922.486mil,-620.236mil)(4922.487mil,-600.236mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7112.218mil|Location2.X=7121.342mil|Location1.Y=4959.395mil|Location2.Y=4968.519mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7112.218mil|Location2.X=7121.342mil|Location1.Y=4959.395mil|Location2.Y=4968.519mil|Absolute=True">Board Outline Clearance(Outline Edge): (3.192mil &lt; 7.874mil) Between Board Edge And Track (5.696mil,1103.296mil)(494.672mil,1103.296mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7112.218mil|Location2.X=7121.342mil|Location1.Y=4329.473mil|Location2.Y=4338.597mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7112.218mil|Location2.X=7121.342mil|Location1.Y=4329.473mil|Location2.Y=4338.597mil|Absolute=True">Board Outline Clearance(Outline Edge): (3.192mil &lt; 7.874mil) Between Board Edge And Track (5.696mil,473.375mil)(494.672mil,473.375mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7112.218mil|Location2.X=7121.342mil|Location1.Y=4329.473mil|Location2.Y=4338.597mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7112.218mil|Location2.X=7121.342mil|Location1.Y=4329.473mil|Location2.Y=4338.597mil|Absolute=True">Board Outline Clearance(Outline Edge): (3.192mil &lt; 7.874mil) Between Board Edge And Track (5.696mil,473.375mil)(5.696mil,1103.296mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6507.631mil|Location2.X=6513.881mil|Location1.Y=6874.374mil|Location2.Y=6880.623mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6507.631mil|Location2.X=6513.881mil|Location1.Y=6874.374mil|Location2.Y=6880.623mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (-614.387mil,3046.851mil)(-594.461mil,2986.826mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6496.976mil|Location2.X=6503.225mil|Location1.Y=6338.263mil|Location2.Y=6344.513mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6496.976mil|Location2.X=6503.225mil|Location1.Y=6338.263mil|Location2.Y=6344.513mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (-615.771mil,1914.605mil)(-614.387mil,3046.851mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6503.982mil|Location2.X=6510.231mil|Location1.Y=3888.125mil|Location2.Y=3894.374mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6503.982mil|Location2.X=6510.231mil|Location1.Y=3888.125mil|Location2.Y=3894.374mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (-618.11mil,0.602mil)(-598.037mil,60.577mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6494.637mil|Location2.X=6500.886mil|Location1.Y=4424.261mil|Location2.Y=4430.51mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6494.637mil|Location2.X=6500.886mil|Location1.Y=4424.261mil|Location2.Y=4430.51mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (-618.11mil,0.602mil)(-616.726mil,1132.848mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6497.668mil|Location2.X=6503.917mil|Location1.Y=6904.386mil|Location2.Y=6910.636mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6497.668mil|Location2.X=6503.917mil|Location1.Y=6904.386mil|Location2.Y=6910.636mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (-624.387mil,3046.863mil)(-604.387mil,3046.838mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6493.945mil|Location2.X=6500.194mil|Location1.Y=3858.137mil|Location2.Y=3864.387mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6493.945mil|Location2.X=6500.194mil|Location1.Y=3858.137mil|Location2.Y=3864.387mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (-628.11mil,0.614mil)(-608.11mil,0.59mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6487.631mil|Location2.X=6493.881mil|Location1.Y=6874.399mil|Location2.Y=6880.648mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6487.631mil|Location2.X=6493.881mil|Location1.Y=6874.399mil|Location2.Y=6880.648mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (-634.461mil,2986.875mil)(-614.387mil,3046.851mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6483.982mil|Location2.X=6490.231mil|Location1.Y=3888.15mil|Location2.Y=3894.399mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6483.982mil|Location2.X=6490.231mil|Location1.Y=3888.15mil|Location2.Y=3894.399mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (-638.037mil,60.626mil)(-618.11mil,0.602mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7112.376mil|Location2.X=7121.5mil|Location1.Y=6156.354mil|Location2.Y=6165.478mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7112.376mil|Location2.X=7121.5mil|Location1.Y=6156.354mil|Location2.Y=6165.478mil|Absolute=True">Board Outline Clearance(Outline Edge): (3.509mil &lt; 7.874mil) Between Board Edge And Track (7.45mil,2300.256mil)(62.962mil,2300.256mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7112.376mil|Location2.X=7121.5mil|Location1.Y=6156.354mil|Location2.Y=6165.478mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7112.376mil|Location2.X=7121.5mil|Location1.Y=6156.354mil|Location2.Y=6165.478mil|Absolute=True">Board Outline Clearance(Outline Edge): (3.509mil &lt; 7.874mil) Between Board Edge And Track (7.45mil,2300.256mil)(7.45mil,2652.224mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7112.376mil|Location2.X=7121.5mil|Location1.Y=6508.323mil|Location2.Y=6517.447mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7112.376mil|Location2.X=7121.5mil|Location1.Y=6508.323mil|Location2.Y=6517.447mil|Absolute=True">Board Outline Clearance(Outline Edge): (3.509mil &lt; 7.874mil) Between Board Edge And Track (7.45mil,2652.224mil)(62.962mil,2652.224mil) on Top Overlay </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID0BDYVTJHS3BYNLNVNKFLWDKIUEMTNAEABXSWAMIHBBSP1KS4VQNE"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Matched Lengths(Tolerance=19.685mil) (InNetClass('ETH_MD'))</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\B%C4%B0ND%C4%B0K B%C4%B0 ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8186.431mil|Location2.X=10142.153mil|Location1.Y=4939.667mil|Location2.Y=5231.852mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Orhun\Desktop\BINDIK BI ALAMETE BOARD\T8_devkit_PCB\T8_SOM_Carrier.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8186.431mil|Location2.X=10142.153mil|Location1.Y=4939.667mil|Location2.Y=5231.852mil|Absolute=True">Matched Net Lengths: Between Net ETH_MDC And Net ETH_MDI_O Length:1786.313mil is not within 19.685mil tolerance of Length:2337.642mil (531.645mil short) </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

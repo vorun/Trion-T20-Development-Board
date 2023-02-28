@@ -1,0 +1,39 @@
+------------------------------------------------------------------------------------------
+Gerber File Extension Report For: T20_DevBoard.GBR   2/3/2023  02:35:44 AM
+------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------
+Layer Extension     Layer Description                      
+------------------------------------------------------------------------------------------
+.GTO                Top Overlay                             
+.GTP                Top Paste                               
+.GTS                Top Solder                              
+.GTL                Signal_Top                              
+.G1                 GND_1                                   
+.G2                 Signal_Inner                            
+.G3                 PWR                                     
+.G4                 GND_2                                   
+.GBL                Signal_Bottom                           
+.GBS                Bottom Solder                           
+.GBP                Bottom Paste                            
+.GBO                Bottom Overlay                          
+.GM1                Board                                   
+.GM21               Top Tenting                             
+.GM22               Bottom Tenting                          
+.GM23               Top Covering                            
+.GM24               Bottom Component Center                 
+.GM2                Route Tool Path                         
+.GM3                Dimensions                              
+.GM4                Top 3D Body                             
+.GM5                Bottom 3D Body                          
+.GM6                Top Component Center                    
+.GM7                Top Component Outline                   
+.GM13               Top Assembly                            
+.GM14               Bottom Assembly                         
+.GM15               Top Courtyard                           
+.GM16               Bottom Courtyard                        
+.GM17               Top Designator                          
+.GPT                Top Pad Master                          
+.GPB                Bottom Pad Master                       
+------------------------------------------------------------------------------------------

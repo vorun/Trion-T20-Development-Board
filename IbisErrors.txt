@@ -1,0 +1,362 @@
+WARNING (line   29) - IBIS files should not contain tab characters.
+NOTE (line  227) - GND Clamp Minimum data is non-monotonic
+NOTE (line  234) - GND Clamp Typical data is non-monotonic
+NOTE (line  236) - GND Clamp Maximum data is non-monotonic
+NOTE (line  354) - Pulldown Maximum data is non-monotonic
+NOTE (line  355) - Pulldown Typical data is non-monotonic
+NOTE (line  356) - Pulldown Minimum data is non-monotonic
+NOTE (line  447) - Pullup Maximum data is non-monotonic
+NOTE (line  448) - Pullup Typical data is non-monotonic
+NOTE (line  449) - Pullup Minimum data is non-monotonic
+WARNING -
+    Model 'io_1p8_d1s0': Vmeas timing test load parameter should be specified
+NOTE (line 1009) - GND Clamp Minimum data is non-monotonic
+NOTE (line 1016) - GND Clamp Typical data is non-monotonic
+NOTE (line 1018) - GND Clamp Maximum data is non-monotonic
+NOTE (line 1136) - Pulldown Maximum data is non-monotonic
+NOTE (line 1137) - Pulldown Typical data is non-monotonic
+NOTE (line 1138) - Pulldown Minimum data is non-monotonic
+NOTE (line 1229) - Pullup Maximum data is non-monotonic
+NOTE (line 1230) - Pullup Typical data is non-monotonic
+NOTE (line 1231) - Pullup Minimum data is non-monotonic
+WARNING -
+    Model 'io_1p8_d1s1': Vmeas timing test load parameter should be specified
+NOTE (line 1791) - GND Clamp Minimum data is non-monotonic
+NOTE (line 1798) - GND Clamp Typical data is non-monotonic
+NOTE (line 1800) - GND Clamp Maximum data is non-monotonic
+NOTE (line 1918) - Pulldown Maximum data is non-monotonic
+NOTE (line 1919) - Pulldown Typical data is non-monotonic
+NOTE (line 1920) - Pulldown Minimum data is non-monotonic
+NOTE (line 2011) - Pullup Maximum data is non-monotonic
+NOTE (line 2012) - Pullup Typical data is non-monotonic
+NOTE (line 2013) - Pullup Minimum data is non-monotonic
+WARNING -
+    Model 'io_1p8_d2s0': Vmeas timing test load parameter should be specified
+NOTE (line 2573) - GND Clamp Minimum data is non-monotonic
+NOTE (line 2580) - GND Clamp Typical data is non-monotonic
+NOTE (line 2582) - GND Clamp Maximum data is non-monotonic
+NOTE (line 2700) - Pulldown Maximum data is non-monotonic
+NOTE (line 2701) - Pulldown Typical data is non-monotonic
+NOTE (line 2702) - Pulldown Minimum data is non-monotonic
+NOTE (line 2793) - Pullup Maximum data is non-monotonic
+NOTE (line 2794) - Pullup Typical data is non-monotonic
+NOTE (line 2795) - Pullup Minimum data is non-monotonic
+WARNING -
+    Model 'io_1p8_d2s1': Vmeas timing test load parameter should be specified
+NOTE (line 3355) - GND Clamp Minimum data is non-monotonic
+NOTE (line 3362) - GND Clamp Typical data is non-monotonic
+NOTE (line 3364) - GND Clamp Maximum data is non-monotonic
+NOTE (line 3482) - Pulldown Maximum data is non-monotonic
+NOTE (line 3483) - Pulldown Typical data is non-monotonic
+NOTE (line 3484) - Pulldown Minimum data is non-monotonic
+NOTE (line 3575) - Pullup Maximum data is non-monotonic
+NOTE (line 3576) - Pullup Typical data is non-monotonic
+NOTE (line 3577) - Pullup Minimum data is non-monotonic
+WARNING -
+    Model 'io_1p8_d3s0': Vmeas timing test load parameter should be specified
+NOTE (line 4137) - GND Clamp Minimum data is non-monotonic
+NOTE (line 4144) - GND Clamp Typical data is non-monotonic
+NOTE (line 4146) - GND Clamp Maximum data is non-monotonic
+NOTE (line 4264) - Pulldown Maximum data is non-monotonic
+NOTE (line 4265) - Pulldown Typical data is non-monotonic
+NOTE (line 4266) - Pulldown Minimum data is non-monotonic
+NOTE (line 4357) - Pullup Maximum data is non-monotonic
+NOTE (line 4358) - Pullup Typical data is non-monotonic
+NOTE (line 4359) - Pullup Minimum data is non-monotonic
+WARNING -
+    Model 'io_1p8_d3s1': Vmeas timing test load parameter should be specified
+NOTE (line 4919) - GND Clamp Minimum data is non-monotonic
+NOTE (line 4926) - GND Clamp Typical data is non-monotonic
+NOTE (line 4928) - GND Clamp Maximum data is non-monotonic
+NOTE (line 5046) - Pulldown Maximum data is non-monotonic
+NOTE (line 5047) - Pulldown Typical data is non-monotonic
+NOTE (line 5048) - Pulldown Minimum data is non-monotonic
+NOTE (line 5139) - Pullup Maximum data is non-monotonic
+NOTE (line 5140) - Pullup Typical data is non-monotonic
+NOTE (line 5141) - Pullup Minimum data is non-monotonic
+WARNING -
+    Model 'io_1p8_d4s0': Vmeas timing test load parameter should be specified
+NOTE (line 5701) - GND Clamp Minimum data is non-monotonic
+NOTE (line 5708) - GND Clamp Typical data is non-monotonic
+NOTE (line 5710) - GND Clamp Maximum data is non-monotonic
+NOTE (line 5828) - Pulldown Maximum data is non-monotonic
+NOTE (line 5829) - Pulldown Typical data is non-monotonic
+NOTE (line 5830) - Pulldown Minimum data is non-monotonic
+NOTE (line 5921) - Pullup Maximum data is non-monotonic
+NOTE (line 5922) - Pullup Typical data is non-monotonic
+NOTE (line 5923) - Pullup Minimum data is non-monotonic
+WARNING -
+    Model 'io_1p8_d4s1': Vmeas timing test load parameter should be specified
+NOTE (line 6482) - GND Clamp Minimum data is non-monotonic
+NOTE (line 6489) - GND Clamp Typical data is non-monotonic
+NOTE (line 6491) - GND Clamp Maximum data is non-monotonic
+NOTE (line 6610) - Pulldown Typical data is non-monotonic
+NOTE (line 6610) - Pulldown Maximum data is non-monotonic
+NOTE (line 6611) - Pulldown Minimum data is non-monotonic
+NOTE (line 6703) - Pullup Maximum data is non-monotonic
+NOTE (line 6704) - Pullup Typical data is non-monotonic
+NOTE (line 6704) - Pullup Minimum data is non-monotonic
+WARNING -
+    Model 'io_2p5_d1s0': Vmeas timing test load parameter should be specified
+NOTE (line 7260) - GND Clamp Minimum data is non-monotonic
+NOTE (line 7267) - GND Clamp Typical data is non-monotonic
+NOTE (line 7269) - GND Clamp Maximum data is non-monotonic
+NOTE (line 7388) - Pulldown Typical data is non-monotonic
+NOTE (line 7388) - Pulldown Maximum data is non-monotonic
+NOTE (line 7389) - Pulldown Minimum data is non-monotonic
+NOTE (line 7481) - Pullup Maximum data is non-monotonic
+NOTE (line 7482) - Pullup Typical data is non-monotonic
+NOTE (line 7482) - Pullup Minimum data is non-monotonic
+WARNING -
+    Model 'io_2p5_d1s1': Vmeas timing test load parameter should be specified
+NOTE (line 8040) - GND Clamp Minimum data is non-monotonic
+NOTE (line 8047) - GND Clamp Typical data is non-monotonic
+NOTE (line 8049) - GND Clamp Maximum data is non-monotonic
+NOTE (line 8168) - Pulldown Typical data is non-monotonic
+NOTE (line 8168) - Pulldown Maximum data is non-monotonic
+NOTE (line 8169) - Pulldown Minimum data is non-monotonic
+NOTE (line 8259) - Pullup Maximum data is non-monotonic
+NOTE (line 8260) - Pullup Typical data is non-monotonic
+NOTE (line 8260) - Pullup Minimum data is non-monotonic
+WARNING -
+    Model 'io_2p5_d2s0': Vmeas timing test load parameter should be specified
+NOTE (line 8816) - GND Clamp Minimum data is non-monotonic
+NOTE (line 8823) - GND Clamp Typical data is non-monotonic
+NOTE (line 8825) - GND Clamp Maximum data is non-monotonic
+NOTE (line 8944) - Pulldown Typical data is non-monotonic
+NOTE (line 8944) - Pulldown Maximum data is non-monotonic
+NOTE (line 8945) - Pulldown Minimum data is non-monotonic
+NOTE (line 9035) - Pullup Maximum data is non-monotonic
+NOTE (line 9036) - Pullup Typical data is non-monotonic
+NOTE (line 9036) - Pullup Minimum data is non-monotonic
+WARNING -
+    Model 'io_2p5_d2s1': Vmeas timing test load parameter should be specified
+NOTE (line 9592) - GND Clamp Minimum data is non-monotonic
+NOTE (line 9599) - GND Clamp Typical data is non-monotonic
+NOTE (line 9601) - GND Clamp Maximum data is non-monotonic
+NOTE (line 9720) - Pulldown Typical data is non-monotonic
+NOTE (line 9720) - Pulldown Maximum data is non-monotonic
+NOTE (line 9721) - Pulldown Minimum data is non-monotonic
+NOTE (line 9811) - Pullup Maximum data is non-monotonic
+NOTE (line 9812) - Pullup Typical data is non-monotonic
+NOTE (line 9812) - Pullup Minimum data is non-monotonic
+WARNING -
+    Model 'io_2p5_d3s0': Vmeas timing test load parameter should be specified
+NOTE (line 10368) - GND Clamp Minimum data is non-monotonic
+NOTE (line 10375) - GND Clamp Typical data is non-monotonic
+NOTE (line 10377) - GND Clamp Maximum data is non-monotonic
+NOTE (line 10496) - Pulldown Typical data is non-monotonic
+NOTE (line 10496) - Pulldown Maximum data is non-monotonic
+NOTE (line 10497) - Pulldown Minimum data is non-monotonic
+NOTE (line 10587) - Pullup Maximum data is non-monotonic
+NOTE (line 10588) - Pullup Typical data is non-monotonic
+NOTE (line 10588) - Pullup Minimum data is non-monotonic
+WARNING -
+    Model 'io_2p5_d3s1': Vmeas timing test load parameter should be specified
+NOTE (line 11144) - GND Clamp Minimum data is non-monotonic
+NOTE (line 11151) - GND Clamp Typical data is non-monotonic
+NOTE (line 11153) - GND Clamp Maximum data is non-monotonic
+NOTE (line 11272) - Pulldown Typical data is non-monotonic
+NOTE (line 11272) - Pulldown Maximum data is non-monotonic
+NOTE (line 11273) - Pulldown Minimum data is non-monotonic
+NOTE (line 11363) - Pullup Maximum data is non-monotonic
+NOTE (line 11364) - Pullup Typical data is non-monotonic
+NOTE (line 11364) - Pullup Minimum data is non-monotonic
+WARNING -
+    Model 'io_2p5_d4s0': Vmeas timing test load parameter should be specified
+NOTE (line 11920) - GND Clamp Minimum data is non-monotonic
+NOTE (line 11927) - GND Clamp Typical data is non-monotonic
+NOTE (line 11929) - GND Clamp Maximum data is non-monotonic
+NOTE (line 12048) - Pulldown Typical data is non-monotonic
+NOTE (line 12048) - Pulldown Maximum data is non-monotonic
+NOTE (line 12049) - Pulldown Minimum data is non-monotonic
+NOTE (line 12139) - Pullup Maximum data is non-monotonic
+NOTE (line 12140) - Pullup Typical data is non-monotonic
+NOTE (line 12140) - Pullup Minimum data is non-monotonic
+WARNING -
+    Model 'io_2p5_d4s1': Vmeas timing test load parameter should be specified
+NOTE (line 12696) - GND Clamp Minimum data is non-monotonic
+NOTE (line 12703) - GND Clamp Typical data is non-monotonic
+NOTE (line 12705) - GND Clamp Maximum data is non-monotonic
+NOTE (line 12824) - Pulldown Typical data is non-monotonic
+NOTE (line 12824) - Pulldown Maximum data is non-monotonic
+NOTE (line 12825) - Pulldown Minimum data is non-monotonic
+NOTE (line 12909) - Pullup Maximum data is non-monotonic
+NOTE (line 12915) - Pullup Typical data is non-monotonic
+NOTE (line 12915) - Pullup Minimum data is non-monotonic
+WARNING -
+    Model 'io_3p3_d1s0': Vmeas timing test load parameter should be specified
+NOTE (line 13470) - GND Clamp Minimum data is non-monotonic
+NOTE (line 13477) - GND Clamp Typical data is non-monotonic
+NOTE (line 13479) - GND Clamp Maximum data is non-monotonic
+NOTE (line 13598) - Pulldown Typical data is non-monotonic
+NOTE (line 13598) - Pulldown Maximum data is non-monotonic
+NOTE (line 13599) - Pulldown Minimum data is non-monotonic
+NOTE (line 13683) - Pullup Maximum data is non-monotonic
+NOTE (line 13689) - Pullup Typical data is non-monotonic
+NOTE (line 13689) - Pullup Minimum data is non-monotonic
+WARNING -
+    Model 'io_3p3_d1s1': Vmeas timing test load parameter should be specified
+NOTE (line 14244) - GND Clamp Minimum data is non-monotonic
+NOTE (line 14251) - GND Clamp Typical data is non-monotonic
+NOTE (line 14253) - GND Clamp Maximum data is non-monotonic
+NOTE (line 14371) - Pulldown Maximum data is non-monotonic
+NOTE (line 14372) - Pulldown Typical data is non-monotonic
+NOTE (line 14372) - Pulldown Minimum data is non-monotonic
+NOTE (line 14457) - Pullup Maximum data is non-monotonic
+NOTE (line 14463) - Pullup Typical data is non-monotonic
+NOTE (line 14463) - Pullup Minimum data is non-monotonic
+WARNING -
+    Model 'io_3p3_d2s0': Vmeas timing test load parameter should be specified
+NOTE (line 15018) - GND Clamp Minimum data is non-monotonic
+NOTE (line 15025) - GND Clamp Typical data is non-monotonic
+NOTE (line 15027) - GND Clamp Maximum data is non-monotonic
+NOTE (line 15145) - Pulldown Maximum data is non-monotonic
+NOTE (line 15146) - Pulldown Typical data is non-monotonic
+NOTE (line 15146) - Pulldown Minimum data is non-monotonic
+NOTE (line 15231) - Pullup Maximum data is non-monotonic
+NOTE (line 15237) - Pullup Typical data is non-monotonic
+NOTE (line 15237) - Pullup Minimum data is non-monotonic
+WARNING -
+    Model 'io_3p3_d2s1': Vmeas timing test load parameter should be specified
+NOTE (line 15792) - GND Clamp Minimum data is non-monotonic
+NOTE (line 15799) - GND Clamp Typical data is non-monotonic
+NOTE (line 15801) - GND Clamp Maximum data is non-monotonic
+NOTE (line 15920) - Pulldown Typical data is non-monotonic
+NOTE (line 15920) - Pulldown Maximum data is non-monotonic
+NOTE (line 15921) - Pulldown Minimum data is non-monotonic
+NOTE (line 16006) - Pullup Maximum data is non-monotonic
+NOTE (line 16011) - Pullup Typical data is non-monotonic
+NOTE (line 16011) - Pullup Minimum data is non-monotonic
+WARNING -
+    Model 'io_3p3_d3s0': Vmeas timing test load parameter should be specified
+NOTE (line 16566) - GND Clamp Minimum data is non-monotonic
+NOTE (line 16573) - GND Clamp Typical data is non-monotonic
+NOTE (line 16575) - GND Clamp Maximum data is non-monotonic
+NOTE (line 16694) - Pulldown Typical data is non-monotonic
+NOTE (line 16694) - Pulldown Maximum data is non-monotonic
+NOTE (line 16695) - Pulldown Minimum data is non-monotonic
+NOTE (line 16780) - Pullup Maximum data is non-monotonic
+NOTE (line 16785) - Pullup Typical data is non-monotonic
+NOTE (line 16785) - Pullup Minimum data is non-monotonic
+WARNING -
+    Model 'io_3p3_d3s1': Vmeas timing test load parameter should be specified
+NOTE (line 17340) - GND Clamp Minimum data is non-monotonic
+NOTE (line 17347) - GND Clamp Typical data is non-monotonic
+NOTE (line 17349) - GND Clamp Maximum data is non-monotonic
+NOTE (line 17468) - Pulldown Typical data is non-monotonic
+NOTE (line 17468) - Pulldown Maximum data is non-monotonic
+NOTE (line 17469) - Pulldown Minimum data is non-monotonic
+NOTE (line 17554) - Pullup Maximum data is non-monotonic
+NOTE (line 17559) - Pullup Typical data is non-monotonic
+NOTE (line 17559) - Pullup Minimum data is non-monotonic
+WARNING -
+    Model 'io_3p3_d4s0': Vmeas timing test load parameter should be specified
+NOTE (line 18114) - GND Clamp Minimum data is non-monotonic
+NOTE (line 18121) - GND Clamp Typical data is non-monotonic
+NOTE (line 18123) - GND Clamp Maximum data is non-monotonic
+NOTE (line 18242) - Pulldown Typical data is non-monotonic
+NOTE (line 18242) - Pulldown Maximum data is non-monotonic
+NOTE (line 18243) - Pulldown Minimum data is non-monotonic
+NOTE (line 18328) - Pullup Maximum data is non-monotonic
+NOTE (line 18333) - Pullup Typical data is non-monotonic
+NOTE (line 18333) - Pullup Minimum data is non-monotonic
+WARNING -
+    Model 'io_3p3_d4s1': Vmeas timing test load parameter should be specified
+WARNING - Model 'lvds_tx': Vmeas timing test load parameter should be specified
+NOTE (line 19540) - GND Clamp Minimum data is non-monotonic
+NOTE (line 19547) - GND Clamp Typical data is non-monotonic
+NOTE (line 19549) - GND Clamp Maximum data is non-monotonic
+WARNING (line 19679) - Typ value is not in between Min and Max 
+WARNING (line 19679) -
+    Model lvds_io_3p3: C_comp min value is not the smallest value listed
+WARNING (line 19679) -
+    Model lvds_io_3p3: C_comp max value is not the largest value listed
+NOTE (line 19761) - GND Clamp Minimum data is non-monotonic
+NOTE (line 19768) - GND Clamp Typical data is non-monotonic
+NOTE (line 19770) - GND Clamp Maximum data is non-monotonic
+NOTE (line 19883) - Pullup Typical data is non-monotonic
+NOTE (line 19883) - Pullup Minimum data is non-monotonic
+NOTE (line 19892) - Pullup Maximum data is non-monotonic
+NOTE (line 19981) - Pulldown Maximum data is non-monotonic
+NOTE (line 19982) - Pulldown Typical data is non-monotonic
+NOTE (line 19983) - Pulldown Minimum data is non-monotonic
+WARNING -
+    Model 'lvds_io_3p3': Vmeas timing test load parameter should be specified
+WARNING - Model 'io_3p3_d4s1': Extreme currents present in TYP POWER_Clamp VI Curve (14.9673A @ -1.5V)
+WARNING - Model 'io_3p3_d4s1': Extreme currents present in MIN POWER_Clamp VI Curve (17.0415A @ -1.5V)
+WARNING - Model 'io_3p3_d4s1': Extreme currents present in MAX POWER_Clamp VI Curve (13.6461A @ -1.5V)
+WARNING - Model 'io_3p3_d4s0': Extreme currents present in TYP POWER_Clamp VI Curve (14.9673A @ -1.5V)
+WARNING - Model 'io_3p3_d4s0': Extreme currents present in MIN POWER_Clamp VI Curve (17.0415A @ -1.5V)
+WARNING - Model 'io_3p3_d4s0': Extreme currents present in MAX POWER_Clamp VI Curve (13.6461A @ -1.5V)
+WARNING - Model 'io_3p3_d3s1': Extreme currents present in TYP POWER_Clamp VI Curve (14.9673A @ -1.5V)
+WARNING - Model 'io_3p3_d3s1': Extreme currents present in MIN POWER_Clamp VI Curve (17.0415A @ -1.5V)
+WARNING - Model 'io_3p3_d3s1': Extreme currents present in MAX POWER_Clamp VI Curve (13.6461A @ -1.5V)
+WARNING - Model 'io_3p3_d3s0': Extreme currents present in TYP POWER_Clamp VI Curve (14.9673A @ -1.5V)
+WARNING - Model 'io_3p3_d3s0': Extreme currents present in MIN POWER_Clamp VI Curve (17.0415A @ -1.5V)
+WARNING - Model 'io_3p3_d3s0': Extreme currents present in MAX POWER_Clamp VI Curve (13.6461A @ -1.5V)
+WARNING - Model 'io_3p3_d2s1': Extreme currents present in TYP POWER_Clamp VI Curve (14.9673A @ -1.5V)
+WARNING - Model 'io_3p3_d2s1': Extreme currents present in MIN POWER_Clamp VI Curve (17.0415A @ -1.5V)
+WARNING - Model 'io_3p3_d2s1': Extreme currents present in MAX POWER_Clamp VI Curve (13.6461A @ -1.5V)
+WARNING - Model 'io_3p3_d2s0': Extreme currents present in TYP POWER_Clamp VI Curve (14.9673A @ -1.5V)
+WARNING - Model 'io_3p3_d2s0': Extreme currents present in MIN POWER_Clamp VI Curve (17.0415A @ -1.5V)
+WARNING - Model 'io_3p3_d2s0': Extreme currents present in MAX POWER_Clamp VI Curve (13.6461A @ -1.5V)
+WARNING - Model 'io_3p3_d1s1': Extreme currents present in TYP POWER_Clamp VI Curve (14.9673A @ -1.5V)
+WARNING - Model 'io_3p3_d1s1': Extreme currents present in MIN POWER_Clamp VI Curve (17.0415A @ -1.5V)
+WARNING - Model 'io_3p3_d1s1': Extreme currents present in MAX POWER_Clamp VI Curve (13.6461A @ -1.5V)
+WARNING - Model 'io_3p3_d1s0': Extreme currents present in TYP POWER_Clamp VI Curve (14.9673A @ -1.5V)
+WARNING - Model 'io_3p3_d1s0': Extreme currents present in MIN POWER_Clamp VI Curve (17.0415A @ -1.5V)
+WARNING - Model 'io_3p3_d1s0': Extreme currents present in MAX POWER_Clamp VI Curve (13.6461A @ -1.5V)
+WARNING - Model 'io_2p5_d4s1': Extreme currents present in TYP POWER_Clamp VI Curve (14.9671A @ -1.5V)
+WARNING - Model 'io_2p5_d4s1': Extreme currents present in MIN POWER_Clamp VI Curve (17.0414A @ -1.5V)
+WARNING - Model 'io_2p5_d4s1': Extreme currents present in MAX POWER_Clamp VI Curve (13.646A @ -1.5V)
+WARNING - Model 'io_2p5_d4s0': Extreme currents present in TYP POWER_Clamp VI Curve (14.9671A @ -1.5V)
+WARNING - Model 'io_2p5_d4s0': Extreme currents present in MIN POWER_Clamp VI Curve (17.0414A @ -1.5V)
+WARNING - Model 'io_2p5_d4s0': Extreme currents present in MAX POWER_Clamp VI Curve (13.646A @ -1.5V)
+WARNING - Model 'io_2p5_d3s1': Extreme currents present in TYP POWER_Clamp VI Curve (14.9671A @ -1.5V)
+WARNING - Model 'io_2p5_d3s1': Extreme currents present in MIN POWER_Clamp VI Curve (17.0414A @ -1.5V)
+WARNING - Model 'io_2p5_d3s1': Extreme currents present in MAX POWER_Clamp VI Curve (13.646A @ -1.5V)
+WARNING - Model 'io_2p5_d3s0': Extreme currents present in TYP POWER_Clamp VI Curve (14.9671A @ -1.5V)
+WARNING - Model 'io_2p5_d3s0': Extreme currents present in MIN POWER_Clamp VI Curve (17.0414A @ -1.5V)
+WARNING - Model 'io_2p5_d3s0': Extreme currents present in MAX POWER_Clamp VI Curve (13.646A @ -1.5V)
+WARNING - Model 'io_2p5_d2s1': Extreme currents present in TYP POWER_Clamp VI Curve (14.9671A @ -1.5V)
+WARNING - Model 'io_2p5_d2s1': Extreme currents present in MIN POWER_Clamp VI Curve (17.0414A @ -1.5V)
+WARNING - Model 'io_2p5_d2s1': Extreme currents present in MAX POWER_Clamp VI Curve (13.646A @ -1.5V)
+WARNING - Model 'io_2p5_d2s0': Extreme currents present in TYP POWER_Clamp VI Curve (14.9671A @ -1.5V)
+WARNING - Model 'io_2p5_d2s0': Extreme currents present in MIN POWER_Clamp VI Curve (17.0414A @ -1.5V)
+WARNING - Model 'io_2p5_d2s0': Extreme currents present in MAX POWER_Clamp VI Curve (13.646A @ -1.5V)
+WARNING - Model 'io_2p5_d1s1': Extreme currents present in TYP POWER_Clamp VI Curve (14.9671A @ -1.5V)
+WARNING - Model 'io_2p5_d1s1': Extreme currents present in MIN POWER_Clamp VI Curve (17.0414A @ -1.5V)
+WARNING - Model 'io_2p5_d1s1': Extreme currents present in MAX POWER_Clamp VI Curve (13.646A @ -1.5V)
+WARNING - Model 'io_2p5_d1s0': Extreme currents present in TYP POWER_Clamp VI Curve (14.9671A @ -1.5V)
+WARNING - Model 'io_2p5_d1s0': Extreme currents present in MIN POWER_Clamp VI Curve (17.0414A @ -1.5V)
+WARNING - Model 'io_2p5_d1s0': Extreme currents present in MAX POWER_Clamp VI Curve (13.646A @ -1.5V)
+WARNING - Model 'io_1p8_d4s1': Extreme currents present in TYP POWER_Clamp VI Curve (14.9672A @ -1.5V)
+WARNING - Model 'io_1p8_d4s1': Extreme currents present in MIN POWER_Clamp VI Curve (17.0414A @ -1.5V)
+WARNING - Model 'io_1p8_d4s1': Extreme currents present in MAX POWER_Clamp VI Curve (13.646A @ -1.5V)
+WARNING - Model 'io_1p8_d4s0': Extreme currents present in TYP POWER_Clamp VI Curve (14.9672A @ -1.5V)
+WARNING - Model 'io_1p8_d4s0': Extreme currents present in MIN POWER_Clamp VI Curve (17.0414A @ -1.5V)
+WARNING - Model 'io_1p8_d4s0': Extreme currents present in MAX POWER_Clamp VI Curve (13.646A @ -1.5V)
+WARNING - Model 'io_1p8_d3s1': Extreme currents present in TYP POWER_Clamp VI Curve (14.9672A @ -1.5V)
+WARNING - Model 'io_1p8_d3s1': Extreme currents present in MIN POWER_Clamp VI Curve (17.0414A @ -1.5V)
+WARNING - Model 'io_1p8_d3s1': Extreme currents present in MAX POWER_Clamp VI Curve (13.646A @ -1.5V)
+WARNING - Model 'io_1p8_d3s0': Extreme currents present in TYP POWER_Clamp VI Curve (14.9672A @ -1.5V)
+WARNING - Model 'io_1p8_d3s0': Extreme currents present in MIN POWER_Clamp VI Curve (17.0414A @ -1.5V)
+WARNING - Model 'io_1p8_d3s0': Extreme currents present in MAX POWER_Clamp VI Curve (13.646A @ -1.5V)
+WARNING - Model 'io_1p8_d2s1': Extreme currents present in TYP POWER_Clamp VI Curve (14.9672A @ -1.5V)
+WARNING - Model 'io_1p8_d2s1': Extreme currents present in MIN POWER_Clamp VI Curve (17.0414A @ -1.5V)
+WARNING - Model 'io_1p8_d2s1': Extreme currents present in MAX POWER_Clamp VI Curve (13.646A @ -1.5V)
+WARNING - Model 'io_1p8_d2s0': Extreme currents present in TYP POWER_Clamp VI Curve (14.9672A @ -1.5V)
+WARNING - Model 'io_1p8_d2s0': Extreme currents present in MIN POWER_Clamp VI Curve (17.0414A @ -1.5V)
+WARNING - Model 'io_1p8_d2s0': Extreme currents present in MAX POWER_Clamp VI Curve (13.646A @ -1.5V)
+WARNING - Model 'io_1p8_d1s1': Extreme currents present in TYP POWER_Clamp VI Curve (14.9672A @ -1.5V)
+WARNING - Model 'io_1p8_d1s1': Extreme currents present in MIN POWER_Clamp VI Curve (17.0414A @ -1.5V)
+WARNING - Model 'io_1p8_d1s1': Extreme currents present in MAX POWER_Clamp VI Curve (13.646A @ -1.5V)
+WARNING - Model 'io_1p8_d1s0': Extreme currents present in TYP POWER_Clamp VI Curve (14.9672A @ -1.5V)
+WARNING - Model 'io_1p8_d1s0': Extreme currents present in MIN POWER_Clamp VI Curve (17.0414A @ -1.5V)
+WARNING - Model 'io_1p8_d1s0': Extreme currents present in MAX POWER_Clamp VI Curve (13.646A @ -1.5V)
+
+Errors  : 0
+Warnings: 102
+
+File Passed
