@@ -16,7 +16,7 @@ Development board for Efinix Trion T20 FPGA.
 
 - Various buttons and leds.
 
-- Rasberry Pi header fo I/O connectivity.
+- Rasberry Pi header for I/O connectivity.
 
 - Standard SYZYGY port for LVDS I/O with configurable voltage levels. (Or 2 PMODS or Rasberry Pi MIPI connector NOT DECIDED YET)
 
