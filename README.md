@@ -19,10 +19,15 @@ Development board for Efinix Trion T20 FPGA.
 - PCB is designed to be manufactored by JLCPCB using the 6 layer impedence controlled JLC3313 stack up. All of the impedence controlled track widths calculated acording to the JLC3313 stack up. Stack is as follows;
 
 ---Signal
+
 ---Ground
+
 ---Signal
+
 ---Power
+
 ---Ground
+
 ---Signal
 
 ![t20 top](https://user-images.githubusercontent.com/79105578/221904231-6ed081d1-3776-47bf-bb15-15c087bf4cc6.PNG)
