@@ -1,5 +1,30 @@
 # Trion T20 Development Board
- 
+
+Development board for Efinix Trion T20 FPGA.
+
+- SPI and JTAG configuration from FT4232 IC.
+
+- USB OTG.
+
+- 100 Mbit/s ethernet connection.
+
+- Wi-fi/Bluetooth connectivity.
+
+- SD Card.
+
+- Rasberry Pi header fo I/O connectivity.
+
+- Standard SYZYGY port for LVDS I/O with configurable voltage levels.(Or 2 PMODS or Rasberry Pi MIPI connector NOT DECIDED YET)
+
+- PCB is designed to be manufactored by JLCPCB using the 6 layer impedence controlled JLC3313 stack up. All of the impedence controlled track widths calculated acording to the JLC3313 stack up. Stack is as follows;
+
+---Signal
+---Ground
+---Signal
+---Power
+---Ground
+---Signal
+
 ![t20 top](https://user-images.githubusercontent.com/79105578/221904231-6ed081d1-3776-47bf-bb15-15c087bf4cc6.PNG)
 
 ![t20 bottom](https://user-images.githubusercontent.com/79105578/221904371-238db9cc-388a-4ff9-8e5b-73a5268bd3ac.PNG)
