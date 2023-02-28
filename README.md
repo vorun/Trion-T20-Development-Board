@@ -1,6 +1,6 @@
 # Trion T20 Development Board
 
-***WORK IN PROGRESS***
+# ***WORK IN PROGRESS***
 
 Development board for Efinix Trion T20 FPGA.
 
