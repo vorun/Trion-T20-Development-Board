@@ -8,7 +8,7 @@ Development board for Efinix Trion T20 FPGA.
 
 - USB OTG.
 
-- 100 Mbit/s ethernet connection.
+- 100 Mbit/s ethernet.
 
 - Wi-fi/Bluetooth connectivity.
 
