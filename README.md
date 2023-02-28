@@ -1,5 +1,7 @@
 # Trion T20 Development Board
 
+***WORK IN PROGRESS***
+
 Development board for Efinix Trion T20 FPGA.
 
 - SPI and JTAG configuration from FT4232 IC.
@@ -29,6 +31,8 @@ Development board for Efinix Trion T20 FPGA.
 ---Ground
 
 ---Signal
+
+All of the high speed impedence controlled tracks are routed on top and bottom layers.
 
 ![t20 top](https://user-images.githubusercontent.com/79105578/221904231-6ed081d1-3776-47bf-bb15-15c087bf4cc6.PNG)
 
